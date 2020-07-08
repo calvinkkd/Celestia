@@ -970,3 +970,8 @@ getEncodedObjectName(const Selection& selection, const CelestiaCore* appCore)
 
     return Url::encodeString(name);
 }
+
+unsigned int Url::getCurrentVersion()
+{
+    return Url::CurrentVersion;
+}

@@ -857,7 +857,7 @@ AddBookmarkDialog::accept()
         Q_ASSERT(timeSource >= 0 && timeSource < Url::TimeSourceCount);
 
         // Get the URL string
-        Url url(m_appState, Url::CurrentVersion, timeSource);
+        Url url(m_appState, Url::getCurrentVersion(), timeSource);
 
         BookmarkItem* folder = m_manager->model()->getItem(index);
         auto* newItem = new BookmarkItem(BookmarkItem::Bookmark, folder);

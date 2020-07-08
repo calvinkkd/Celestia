@@ -73,6 +73,7 @@ public:
     bool goTo();
 
     static const unsigned int CurrentVersion;
+    static unsigned int getCurrentVersion();
 
     static std::string decodeString(const std::string& str);
     static std::string encodeString(const std::string& str);
