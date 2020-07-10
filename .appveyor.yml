@@ -77,17 +77,19 @@ build_script:
 
     set CTEST_OUTPUT_ON_FAILURE=1
 
+    path %PATH%;c:\projects\celestia\build\src\celestia\RelWithDebInfo
+
     ctest -C RelWithDebInfo
 
 after_build:
   - cmd: >-
       cd c:\projects\celestia\build\src\celestia
 
-      7z a celestia-win.x86.7z win32\RelWithDebInfo\*
+      7z a celestia-win.x86.7z win32\RelWithDebInfo\* RelWithDebInfo\*.dll
 
       windeployqt --no-angle --no-opengl-sw --no-translations --no-system-d3d-compiler qt\RelWithDebInfo\
 
-      7z a celestia-qt.x86.7z qt\RelWithDebInfo\*
+      7z a celestia-qt.x86.7z qt\RelWithDebInfo\* RelWithDebInfo\*.dll
 
 #on_failure:
 #- type "c:\projects\celestia\build\CMakeFiles\CMakeOutput.log"
